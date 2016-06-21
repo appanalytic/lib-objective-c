@@ -5,9 +5,6 @@
 //  Created by Vahid Sayad on 06/21/2016.
 //  Copyright (c) 2016 Vahid Sayad. All rights reserved.
 //
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "AppAnalyticsObjC.h"
 @import XCTest;
 
 @interface Tests : XCTestCase
