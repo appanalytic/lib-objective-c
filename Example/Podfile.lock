@@ -1,0 +1,16 @@
+PODS:
+  - AppAnalyticsObjC (0.1.0)
+
+DEPENDENCIES:
+  - AppAnalyticsObjC (from `../`)
+
+EXTERNAL SOURCES:
+  AppAnalyticsObjC:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AppAnalyticsObjC: 7d43cac218e81272aea144ffda52b62343aeb6ce
+
+PODFILE CHECKSUM: ebe72f1ad85557a88d5d6cde3f85d77e2b4881f8
+
+COCOAPODS: 1.0.1
