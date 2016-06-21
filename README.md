@@ -22,6 +22,19 @@ it, simply add the following line to your Podfile:
 pod "AppAnalyticsObjC"
 ```
 
+
+Add this line of code in 'viewControlle.m' file:
+```objectivec
+#import "AppAnalyticsObjC.h"
+```
+
+## Start
+Make an object and call submitCampain method:
+```objectivec
+AppAnalyticsObjC *object = [[AppAnalyticsObjc alloc] initWithAccessKey: @"Your ACCESS-KEY"];
+[object submitCampaign];
+```
+
 ## Author
 
 AppAnalytics Develpment Team, development@appanalytics.ir

@@ -23,7 +23,6 @@ NSString *_accessKey;
     [request setValue:self._accessKey forHTTPHeaderField:@"Access-Key"];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"submitCampaign Inside dataTaskWithRequest");
         if(data != NULL){
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"AppAnalytic Info: [%@]", dataString);
@@ -36,7 +35,6 @@ NSString *_accessKey;
     }];
     
     [task resume];
-    NSLog(@"submitCampaign Finished");
 }
 
 - (instancetype)init
@@ -49,7 +47,6 @@ NSString *_accessKey;
 
 - (id)initWithAccessKey:(NSString*)key
 {
-    NSLog(@"AppAnalyticsObjectivCClass initilized");
     self._APIURL = @"http://appanalytics.ir/api/v1/iosservice/initialize/";
     self._accessKey = key;
     NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
