@@ -1,6 +1,6 @@
 # AppAnalyticsObjC
 
-[![CI Status](http://img.shields.io/travis/Vahid Sayad/AppAnalyticsObjC.svg?style=flat)](https://travis-ci.org/Vahid Sayad/AppAnalyticsObjC)
+[![CI Status](http://img.shields.io/travis/appanalytic/lib-objective-c.svg?style=flat)](https://travis-ci.org/appanalytic/lib-objective-c)
 [![Version](https://img.shields.io/cocoapods/v/AppAnalyticsObjC.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsObjC)
 [![License](https://img.shields.io/cocoapods/l/AppAnalyticsObjC.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsObjC)
 [![Platform](https://img.shields.io/cocoapods/p/AppAnalyticsObjC.svg?style=flat)](http://cocoapods.org/pods/AppAnalyticsObjC)
@@ -10,6 +10,8 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Enable http domains exception
+info.plist >> add App Transport Security Settings ++>> Allow Arbitrary Loads = YES
 
 ## Installation
 
