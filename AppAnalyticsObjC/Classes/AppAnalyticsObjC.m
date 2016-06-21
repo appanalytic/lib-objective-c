@@ -7,19 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppAnalyticsObjC.h"
 #import <UIKit/UIKit.h>
-
-
-@interface AppAnalyticsObjC : NSObject
-
-@property NSString *_accessKey;
-@property NSString *_APIURL;
-@property NSString *_UUID;
--(void) submitCampaign;
-- (id)initWithAccessKey:(NSString*)key;
-
-@end
-
 
 @implementation AppAnalyticsObjC
 

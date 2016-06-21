@@ -11,6 +11,8 @@
 		2C4517BCF7747F3B6BA7ABA13CBFBCF5 /* AppAnalyticsObjC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80757A9F09DB076DD5ABFAA57443830E /* AppAnalyticsObjC-dummy.m */; };
 		3D8ABEB91D1902FF0012D020 /* AppAnalyticsObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8ABEB81D1902FF0012D020 /* AppAnalyticsObjC.m */; };
 		3D8ABEBA1D1902FF0012D020 /* AppAnalyticsObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8ABEB81D1902FF0012D020 /* AppAnalyticsObjC.m */; };
+		3D8ABEE21D1913A50012D020 /* AppAnalyticsObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8ABEE11D1913A50012D020 /* AppAnalyticsObjC.h */; };
+		3D8ABEE31D1913A50012D020 /* AppAnalyticsObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8ABEE11D1913A50012D020 /* AppAnalyticsObjC.h */; };
 		A6F0A3A74D0DD8FBDEDC733F1B3AACE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		C467913A6454D9D85DDD99AC4CCEAA09 /* Pods-AppAnalyticsObjC_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D082F6D496E073F579BBDE001591D /* Pods-AppAnalyticsObjC_Tests-dummy.m */; };
 		C688C323D6A8DF760A2492EA19BE84CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
@@ -34,6 +36,7 @@
 		2C3D082F6D496E073F579BBDE001591D /* Pods-AppAnalyticsObjC_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppAnalyticsObjC_Tests-dummy.m"; sourceTree = "<group>"; };
 		3BD7CD42F74A66A79846AB0EF6141219 /* AppAnalyticsObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppAnalyticsObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8ABEB81D1902FF0012D020 /* AppAnalyticsObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppAnalyticsObjC.m; sourceTree = "<group>"; };
+		3D8ABEE11D1913A50012D020 /* AppAnalyticsObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAnalyticsObjC.h; sourceTree = "<group>"; };
 		3EFE5C29133F9E436808D6EE59E06F6F /* Pods-AppAnalyticsObjC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppAnalyticsObjC_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		472F76D1608154CC1F4A243348B2F774 /* Pods-AppAnalyticsObjC_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppAnalyticsObjC_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		4A389C3E5FD5DADCBA438BFE09DC1A09 /* Pods-AppAnalyticsObjC_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppAnalyticsObjC_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				3D8ABEB81D1902FF0012D020 /* AppAnalyticsObjC.m */,
+				3D8ABEE11D1913A50012D020 /* AppAnalyticsObjC.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -189,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF9437FF92A5388A87BA9C9DE18F116 /* AppAnalyticsObjC-umbrella.h in Headers */,
+				3D8ABEE21D1913A50012D020 /* AppAnalyticsObjC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F95CC4B8690A5D04A2779DB1C6482A0 /* Pods-AppAnalyticsObjC_Tests-umbrella.h in Headers */,
+				3D8ABEE31D1913A50012D020 /* AppAnalyticsObjC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
