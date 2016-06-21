@@ -22,10 +22,6 @@ it, simply add the following line to your Podfile:
 pod "AppAnalyticsObjC"
 ```
 
-Add in first line of your view controller:
-```objectivec
-import "AppAnalyticsObjC.m"
-```
 ## Author
 
 AppAnalytics Develpment Team, development@appanalytics.ir
