@@ -6,11 +6,11 @@
 //
 //
 
-#ifndef AppAnalyticsObjC_h
-#define AppAnalyticsObjC_h
+#ifndef AppAnalyticsObjC
+#define AppAnalyticsObjC
 
 
-#endif /* AppAnalyticsObjC_h */
+#endif /* AppAnalyticsObjC */
 
 @interface AppAnalyticsObjC : NSObject
 
