@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppAnalyticsObjC.h"
+#import <sys/utsname.h>
 #import <UIKit/UIKit.h>
 
 @interface AppAnalyticsObjC()

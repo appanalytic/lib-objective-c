@@ -17,6 +17,7 @@
 @property NSString *_accessKey;
 @property NSString *_APIURL;
 @property NSString *_APIURL_DeviceInfo;
+@property NSString *_APIURL_AddEvent;
 @property NSString *_UUID;
 @property NSString *_deviceModelName;
 @property NSString *_iOSVersion;
