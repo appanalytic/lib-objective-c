@@ -16,8 +16,17 @@
 
 @property NSString *_accessKey;
 @property NSString *_APIURL;
+@property NSString *_APIURL_DeviceInfo;
 @property NSString *_UUID;
+@property NSString *_deviceModelName;
+@property NSString *_iOSVersion;
+@property NSString *_orientation;
+@property NSString *_batteryLevel;
+@property NSString *_multitaskingSupported;
+
 -(void) submitCampaign;
+-(void) addEvent: (NSString*)eventName value: (NSString*)eventValue;
+-(void) addEvent: (NSString*)eventName;
 - (id)initWithAccessKey:(NSString*)key;
 
 @end
