@@ -111,13 +111,13 @@ NSString* deviceInfo()
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(data != NULL){
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"AppAnalytic Info: [%@]", dataString);
+            NSLog(@"AppAnalytic Info (Submit Campaing): [%@]", dataString);
             NSData *info = [self getDeviceInfo];
             [self sendDeviceInfo: info];
         }
         
         if(error != NULL){
-            NSLog(@"AppAnalytic Error: [%@]", [error localizedDescription]);
+            NSLog(@"AppAnalytic Error (Submit Campaing): [%@]", [error localizedDescription]);
         }
         
     }];
@@ -143,10 +143,10 @@ NSString* deviceInfo()
     NSURLSessionDataTask * task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *req, NSError *error) {
         if(data != NULL) {
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"AppAnalytic Info: [%@]", dataString);
+            NSLog(@"AppAnalytic Info (Send Device Info): [%@]", dataString);
         }
         if (error != NULL){
-            NSLog(@"AppAnalytic Error: [%@]", [error localizedDescription]);
+            NSLog(@"AppAnalytic Error (Send Device Info): [%@]", [error localizedDescription]);
         }
     }];
     
@@ -183,13 +183,13 @@ NSString* deviceInfo()
         NSError *error;
         jsData = [NSJSONSerialization dataWithJSONObject:info options:NSJSONWritingPrettyPrinted error:&error];
         if (!jsData) {
-            NSLog(@"AppAnalytic Error: [ %@ ]", error);
+            NSLog(@"AppAnalytic Error (Get Device Info): [ %@ ]", error);
         } else {
             jsonString = [[NSString alloc] initWithData:jsData encoding:NSUTF8StringEncoding];
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"AppAnalytic Error: [ %@ ]", exception.reason);
+        NSLog(@"AppAnalytic Error (Get Device Info): [ %@ ]", exception.reason);
     }
     @finally {
         
@@ -221,13 +221,13 @@ NSString* deviceInfo()
         NSError *error;
         jsonData = [NSJSONSerialization dataWithJSONObject:events options:NSJSONWritingPrettyPrinted error:&error];
         if (!jsonData) {
-            NSLog(@"AppAnalytic Error (AddEvent): [ %@ ]", error);
+            NSLog(@"AppAnalytic Error (Add Event): [ %@ ]", error);
         } else {
             //jsonString = [[NSString alloc] initWithData:events encoding:NSUTF8StringEncoding];
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"AppAnalytic Error (AddEvent): [ %@ ]", exception.reason);
+        NSLog(@"AppAnalytic Error (Add Event): [ %@ ]", exception.reason);
     }
     @finally {
         
@@ -244,11 +244,11 @@ NSString* deviceInfo()
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(data != NULL){
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"AppAnalytic Info (AddEvent): [%@]", dataString);
+            NSLog(@"AppAnalytic Info (Add Event): [%@]", dataString);
         }
         
         if(error != NULL){
-            NSLog(@"AppAnalytic Error (AddEvent): [%@]", [error localizedDescription]);
+            NSLog(@"AppAnalytic Error (Add Event): [%@]", [error localizedDescription]);
         }
     }];
     
@@ -274,13 +274,13 @@ NSString* deviceInfo()
         NSError *error;
         jsonData = [NSJSONSerialization dataWithJSONObject:events options:NSJSONWritingPrettyPrinted error:&error];
         if (!jsonData) {
-            NSLog(@"AppAnalytic Error _(AddEvent): [ %@ ]", error);
+            NSLog(@"AppAnalytic Error (Add Event): [ %@ ]", error);
         } else {
             //jsonString = [[NSString alloc] initWithData:events encoding:NSUTF8StringEncoding];
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"AppAnalytic Error +(AddEvent): [ %@ ]", exception.reason);
+        NSLog(@"AppAnalytic Error (Add Event): [ %@ ]", exception.reason);
     }
     @finally {
         
@@ -297,11 +297,11 @@ NSString* deviceInfo()
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(data != NULL){
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"AppAnalytic Info (AddEvent): [%@]", dataString);
+            NSLog(@"AppAnalytic Info (Add Event): [%@]", dataString);
         }
         
         if(error != NULL){
-            NSLog(@"AppAnalytic Error (AddEvent): [%@]", [error localizedDescription]);
+            NSLog(@"AppAnalytic Error (Add Event): [%@]", [error localizedDescription]);
         }
     }];
     
