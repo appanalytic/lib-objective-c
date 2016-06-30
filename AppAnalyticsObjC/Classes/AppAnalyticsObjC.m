@@ -103,6 +103,7 @@ NSString* deviceInfo()
 -(void) submitCampaign {
     NSString* URLString = [self._APIURL stringByAppendingString:self._UUID];
     NSURL *url = [NSURL URLWithString:URLString];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] init];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url];
     [request setHTTPMethod:@"GET"];
@@ -111,13 +112,26 @@ NSString* deviceInfo()
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(data != NULL){
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"AppAnalytic Info (Submit Campaing): [%@]", dataString);
-            NSData *info = [self getDeviceInfo];
-            [self sendDeviceInfo: info];
+            
+            NSError *jsonError;
+            NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers
+                                                                      error:&jsonError];
+            NSString *status = jsonDic[@"status"];
+            
+            if ([status isEqualToString:@"ok"]){
+                [defaults setBool:true forKey:@"firstTimeAppAnalytics"];
+                NSLog(@"AppAnalytic Info (Submit Campaing): [%@]", dataString);
+                NSData *info = [self getDeviceInfo];
+                [self sendDeviceInfo: info];
+            } else {
+                [defaults setBool:false forKey:@"firstTimeAppAnalytics"];
+            }
         }
         
         if(error != NULL){
             NSLog(@"AppAnalytic Error (Submit Campaing): [%@]", [error localizedDescription]);
+            [defaults setBool:false forKey:@"firstTimeAppAnalytics"];
         }
         
     }];
@@ -132,6 +146,7 @@ NSString* deviceInfo()
 -(void) sendDeviceInfo: (NSData*)info{
     NSString *stringURL = [[NSString alloc] initWithFormat:@"%@%@", self._APIURL_DeviceInfo, self._UUID];
     NSURL *url = [[NSURL alloc] initWithString:stringURL];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] init];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     
@@ -144,9 +159,21 @@ NSString* deviceInfo()
         if(data != NULL) {
             NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"AppAnalytic Info (Send Device Info): [%@]", dataString);
+            NSError *jsonError;
+            NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers
+                                                                      error:&jsonError];
+            NSString *status = jsonDic[@"status"];
+            
+            if ([status isEqualToString:@"ok"]) {
+                [defaults setBool:true forKey:@"firstTimeAppAnalytics"];
+            } else {
+                [defaults setBool:false forKey:@"firstTimeAppAnalytics"];
+            }
         }
         if (error != NULL){
             NSLog(@"AppAnalytic Error (Send Device Info): [%@]", [error localizedDescription]);
+            [defaults setBool:false forKey:@"firstTimeAppAnalytics"];
         }
     }];
     
@@ -166,16 +193,16 @@ NSString* deviceInfo()
     if (self._deviceModelName != infoError && [self._deviceModelName length] > 1) {
         info[@"DeviceModel"] = self._deviceModelName;
     }
-    if (self._iOSVersion != infoError && [self._iOSVersion length] > 1) {
+    if ((![self._iOSVersion isEqualToString: infoError]) && ([self._iOSVersion length] > 1)) {
         info[@"iOSVersion"] = self._iOSVersion;
     }
-    if (self._orientation != infoError && [self._orientation length] > 1) {
+    if ((![self._orientation isEqualToString: infoError]) && ([self._orientation length] > 1)) {
         info[@"Orientation"] = self._orientation;
     }
-    if (self._batteryLevel != infoError && [self._batteryLevel length] > 1) {
+    if ((![self._batteryLevel isEqualToString: infoError]) && ([self._batteryLevel length] > 1)) {
         info[@"BatteryLevel"] = self._batteryLevel;
     }
-    if (self._multitaskingSupported != infoError && [self._multitaskingSupported length] > 1) {
+    if ((![self._multitaskingSupported isEqualToString: infoError]) && ([self._multitaskingSupported length] > 1)) {
         info[@"MultiTaskingSupported"] = self._multitaskingSupported;
     }
     
