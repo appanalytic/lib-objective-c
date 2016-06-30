@@ -7,11 +7,20 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project:
+
+1. Clone the repo 
+
+2.Run `pod install` from the `Example/RealAppTest` directory first
+
+3. Run `RealAppTest.xcworkspace`
 
 ## Requirements
 Enable http domains exception
-info.plist >> add App Transport Security Settings ++>> Allow Arbitrary Loads = YES
+
+info.plist >> 
+
+Add `App Transport Security Settings` ++>> `Allow Arbitrary Loads = YES`
 
 ## Installation
 
@@ -21,18 +30,32 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "AppAnalyticsObjC"
 ```
+Run `pod install` from terminal
 
+Run `YOUR_APP_NAME.xcworkspace`
 
-Add this line of code in 'viewControlle.m' file:
+Installation Completed!
+
+## How to use
+
+Insert following line to your project 'viewControlle.m':
 ```objectivec
 #import "AppAnalyticsObjC.h"
 ```
-
-## Start
-Make an object and call submitCampain method:
+Initialize `AppAnalyticsObjC` class and call `submitCampaing` method:
 ```objectivec
-AppAnalyticsObjC *object = [[AppAnalyticsObjc alloc] initWithAccessKey: @"Your ACCESS-KEY"];
-[object submitCampaign];
+AppAnalyticsObjC app = [[AppAnalyticsObjC alloc] initWithAccessKey: "YOUR_ACCESS_KEY"];
+[app submitCampaing];
+```
+
+#Events
+To add event with value just call `addEvent` method:
+```objectivec
+[app addEvent: @"Event Name" value: @"Event Value"];
+```
+To add event without value call `addEvent` method:
+```objectivec
+[app addEvent: @"Event Name"];
 ```
 
 ## Author
