@@ -158,34 +158,34 @@ NSString* deviceInfo()
 // MARK: GetDeviceInfo()
 // //////////////////////////////////////////////////////////
 - (NSData*) getDeviceInfo {
-    NSData *json = [[NSData alloc] init];
-    NSString *jsonString = [[NSString alloc]init];
-    NSData *jsData = [[NSData alloc] init];
+    //NSString *jsonString = [[NSString alloc]init];
+    NSData *jsonData = [[NSData alloc] init];
+    NSString *infoError = @"Error";
     
     NSMutableDictionary* info = [NSMutableDictionary dictionary];
-    if (self._deviceModelName != @"Error" && [self._deviceModelName length] > 1) {
+    if (self._deviceModelName != infoError && [self._deviceModelName length] > 1) {
         info[@"DeviceModel"] = self._deviceModelName;
     }
-    if (self._iOSVersion != @"Error" && [self._iOSVersion length] > 1) {
+    if (self._iOSVersion != infoError && [self._iOSVersion length] > 1) {
         info[@"iOSVersion"] = self._iOSVersion;
     }
-    if (self._orientation != @"Error" && [self._orientation length] > 1) {
+    if (self._orientation != infoError && [self._orientation length] > 1) {
         info[@"Orientation"] = self._orientation;
     }
-    if (self._batteryLevel != @"Error" && [self._batteryLevel length] > 1) {
+    if (self._batteryLevel != infoError && [self._batteryLevel length] > 1) {
         info[@"BatteryLevel"] = self._batteryLevel;
     }
-    if (self._multitaskingSupported != @"Error" && [self._multitaskingSupported length] > 1) {
+    if (self._multitaskingSupported != infoError && [self._multitaskingSupported length] > 1) {
         info[@"MultiTaskingSupported"] = self._multitaskingSupported;
     }
     
     @try {
         NSError *error;
-        jsData = [NSJSONSerialization dataWithJSONObject:info options:NSJSONWritingPrettyPrinted error:&error];
-        if (!jsData) {
+        jsonData = [NSJSONSerialization dataWithJSONObject:info options:NSJSONWritingPrettyPrinted error:&error];
+        if (!jsonData) {
             NSLog(@"AppAnalytic Error (Get Device Info): [ %@ ]", error);
         } else {
-            jsonString = [[NSString alloc] initWithData:jsData encoding:NSUTF8StringEncoding];
+            //jsonString = [[NSString alloc] initWithData:jsData encoding:NSUTF8StringEncoding];
         }
     }
     @catch (NSException *exception) {
@@ -195,7 +195,7 @@ NSString* deviceInfo()
         
     }
     
-    return jsData;
+    return jsonData;
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,7 +260,7 @@ NSString* deviceInfo()
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 -(void) addEvent: (NSString*)eventName{
     NSString* stringURL = [NSString stringWithFormat:@"%@%@",self._APIURL_AddEvent, self._UUID];
-    NSString *jsonString = [[NSString alloc]init];
+    //NSString *jsonString = [[NSString alloc]init];
     NSData *jsonData = [[NSData alloc] init];
     
     NSMutableDictionary* events = [NSMutableDictionary dictionary];
