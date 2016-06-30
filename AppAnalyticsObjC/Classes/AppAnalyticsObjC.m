@@ -230,7 +230,7 @@ NSString* deviceInfo()
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 -(void) addEvent: (NSString*)eventName value: (NSString*)eventValue{
     NSString* stringURL = [NSString stringWithFormat:@"%@%@",self._APIURL_AddEvent, self._UUID];
-    NSString *jsonString = [[NSString alloc]init];
+    //NSString *jsonString = [[NSString alloc]init];
     NSData *jsonData = [[NSData alloc] init];
     
     NSMutableDictionary* events = [NSMutableDictionary dictionary];
