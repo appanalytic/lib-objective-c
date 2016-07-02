@@ -44,7 +44,7 @@ Insert following line to your project 'viewControlle.m':
 ```
 Initialize `AppAnalyticsObjC` class and call `submitCampaing` method:
 ```objectivec
-AppAnalyticsObjC *app = [[AppAnalyticsObjC alloc] initWithAccessKey: @"YOUR_ACCESS_KEY"];
+AppAnalyticsObjC app = [[AppAnalyticsObjC alloc] initWithAccessKey: "YOUR_ACCESS_KEY"];
 [app submitCampaing];
 ```
 

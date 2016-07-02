@@ -1,0 +1,21 @@
+PODS:
+  - AppAnalyticsObjC (0.1.1)
+
+DEPENDENCIES:
+  - AppAnalyticsObjC (from `https://github.com/appanalytic/lib-objective-c.git`)
+
+EXTERNAL SOURCES:
+  AppAnalyticsObjC:
+    :git: https://github.com/appanalytic/lib-objective-c.git
+
+CHECKOUT OPTIONS:
+  AppAnalyticsObjC:
+    :commit: 160a6184c35543eba256880fea78c82d5b77db57
+    :git: https://github.com/appanalytic/lib-objective-c.git
+
+SPEC CHECKSUMS:
+  AppAnalyticsObjC: 0be9e7a5636b15f91e9ff1940a5e35bd75951bfa
+
+PODFILE CHECKSUM: 9c5d10885ad470536ef4a4d8b33ccf1ab832a01e
+
+COCOAPODS: 1.0.1
