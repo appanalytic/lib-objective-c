@@ -354,7 +354,7 @@ NSString* deviceInfo()
 {
     self._APIURL                = @"http://appanalytics.ir/api/v1/iosservice/initialize/";
     self._APIURL_DeviceInfo     = @"http://appanalytics.ir/api/v1/iosservice/setdeviceinfo/";
-    selt._APIURL_AddEvent       = @"http://appanalytics.ir/api/v1/iosservice/addevent/";
+    self._APIURL_AddEvent       = @"http://appanalytics.ir/api/v1/iosservice/addevent/";
     self._accessKey = key;
     NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
