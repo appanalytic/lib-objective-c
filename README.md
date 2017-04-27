@@ -1,3 +1,5 @@
+>Discontinued and will not be updated!
+
 # AppAnalyticsObjC
 
 [![CI Status](http://img.shields.io/travis/appanalytic/lib-objective-c.svg?style=flat)](https://travis-ci.org/appanalytic/lib-objective-c)
